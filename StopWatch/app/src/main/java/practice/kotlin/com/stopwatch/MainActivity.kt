@@ -1,6 +1,5 @@
 package practice.kotlin.com.stopwatch
 
-import android.graphics.Color
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.ActionBar
@@ -18,9 +17,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val ab: ActionBar? = supportActionBar
-        ab?.setTitle("StopWatch")
 
+        val ab: ActionBar? = supportActionBar
+        ab?.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM)
+        ab?.setCustomView(R.layout.action_bar)
 
         fab.setOnClickListener {
             isRunning = !isRunning      // 누르면 반대로
