@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">스톱워치</string>
     <string name="Title">DMJ</string>
+    <string name="initialSec">0</string>
+    <string name="initialMilli">00</string>
+    <string name="lapTime">랩 타임</string>
 </resources>

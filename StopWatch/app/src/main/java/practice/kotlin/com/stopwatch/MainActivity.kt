@@ -19,7 +19,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val ab: ActionBar? = supportActionBar
-        ab?.setTitle("DMJ")
+        ab?.setTitle("StopWatch")
+
 
         fab.setOnClickListener {
             isRunning = !isRunning      // 누르면 반대로
@@ -80,7 +81,7 @@ class MainActivity : AppCompatActivity() {
         val lapTime = this.time
         val textView = TextView(this)
         textView.text = "$lap LAP : ${lapTime / 100}.${lapTime % 100}"
-        textView.setTextColor(Color.WHITE)
+        textView.setTextColor(getColor(R.color.textColor))      // R.color만 사용하면 안됨. getColor를 사용
         // 맨 위로 쌓이게
         lapLayout.addView(textView,0)
         lap++
