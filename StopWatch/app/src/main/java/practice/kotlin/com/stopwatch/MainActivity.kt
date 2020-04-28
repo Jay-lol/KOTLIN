@@ -31,12 +31,11 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        lapButton.setOnClickListener{
-            lapRecord()
-        }
-
         resetFab.setOnClickListener {
-            reset()
+            if(isRunning)
+                lapRecord()
+            else
+                reset()
         }
     }
 
@@ -57,6 +56,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun start() {
         fab.setImageResource(R.drawable.ic_pause_black_24dp)
+        resetFab.setImageResource(R.drawable.ic_timer_black_24dp)
 
         timerTask = timer(period = 10) {
             time++
@@ -74,6 +74,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun pause(){
         fab.setImageResource(R.drawable.ic_play_arrow_black_24dp)
+        resetFab.setImageResource(R.drawable.ic_refresh_black_24dp)
         timerTask?.cancel()
     }
 
